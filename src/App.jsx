@@ -4,6 +4,7 @@ import './App.css'
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/eventi@gioielleriarabino.com'
 const MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=Hotel+Superga+Cuneo'
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
 const emptyForm = {
   nome: '',
@@ -140,7 +141,7 @@ export default function App() {
             <h1 className="teaser-chanel">CHANEL</h1>
             <img
               className="teaser-icon"
-              src="/assets/elefantino.svg"
+              src={asset('assets/elefantino.svg')}
               alt="Elefantino Chanel"
             />
             <p className="teaser-date">18 SETTEMBRE</p>
@@ -238,7 +239,7 @@ export default function App() {
       {stage === 'details' && (
         <section className="stage" key="details">
           <div className="hero">
-            <img src="/assets/j12-hero.jpg" alt="Chanel J12" />
+            <img src={asset('assets/j12-hero.jpg')} alt="Chanel J12" />
             <div className="hero-overlay">
               <p className="hero-claim">
                 In the greatest strength lies softness
@@ -365,7 +366,7 @@ export default function App() {
             <footer className="footer">
               <img
                 className="footer-logo"
-                src="/assets/rabino-wordmark.png"
+                src={asset('assets/rabino-wordmark.png')}
                 alt="Gioielleria Rabino 1895"
               />
               <p className="footer-note">
