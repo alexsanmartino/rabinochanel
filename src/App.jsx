@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/eventi@gioielleriarabino.com'
+const FORM_ENDPOINT =
+  'https://hook.eu2.make.com/7nq2oaqmkyb8osb7waajvxhvx58etfnj'
 const MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=Hotel+Superga+Cuneo'
 const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
