@@ -35,3 +35,5 @@ Le submission vanno in POST a FormSubmit (`eventi@gioielleriarabino.com`). Sosti
 - **Build command:** `npm run build`
 - **Output directory:** `dist`
 - Punta un CNAME (es. `invito.gioielleriarabino.com`) al dominio fornito dalla piattaforma.
+
+
