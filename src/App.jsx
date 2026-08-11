@@ -140,7 +140,7 @@ export default function App() {
             <h1 className="teaser-chanel">CHANEL</h1>
             <img
               className="teaser-icon"
-              src="/assets/elefantino.png"
+              src="/assets/elefantino.svg"
               alt="Elefantino Chanel"
             />
             <p className="teaser-date">18 SETTEMBRE</p>

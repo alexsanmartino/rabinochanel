@@ -22,7 +22,7 @@ Sostituisci i placeholder in `public/assets/` con i file definitivi:
 
 | File | Uso |
 |------|-----|
-| `elefantino.png` | Icona teaser (112px) |
+| `elefantino.svg` | Icona teaser (112px) |
 | `j12-hero.jpg` | Hero dettagli (aspect 3/4) |
 | `rabino-wordmark.png` | Logo footer (150px) |
 
