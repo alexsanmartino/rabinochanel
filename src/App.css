@@ -164,7 +164,7 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--border-strong);
-  padding: 10px 0 12px;
+  padding: 10px 0 12px 8px;
   font-size: 16px;
   color: var(--text);
   outline: none;
@@ -397,6 +397,64 @@
 }
 
 /* ——— Discover + footer ——— */
+.privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.privacy input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.privacy input[type='checkbox']:checked {
+  background: var(--btn-bg);
+  border-color: var(--btn-bg);
+}
+
+.privacy input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--btn-text);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.privacy-label {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.privacy-label a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy.has-error input[type='checkbox'] {
+  border-color: var(--error);
+}
+
+.discover-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
 .discover-link {
   display: inline-block;
   font-size: 12px;
@@ -405,7 +463,7 @@
   text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: 6px;
-  margin-bottom: 56px;
+  text-align: center;
 }
 
 .footer {

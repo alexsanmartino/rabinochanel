@@ -71,6 +71,7 @@ function buildIcs() {
 export default function App() {
   const [stage, setStage] = useState('teaser')
   const [form, setForm] = useState(emptyForm)
+  const [privacy, setPrivacy] = useState(false)
   const [errors, setErrors] = useState({})
   const [submitting, setSubmitting] = useState(false)
   const [rsvp, setRsvp] = useState(null)
@@ -95,6 +96,7 @@ export default function App() {
     if (!form.cognome.trim()) next.cognome = 'Campo obbligatorio'
     if (!form.email.trim()) next.email = 'Campo obbligatorio'
     else if (!isValidEmail(form.email)) next.email = 'Email non valida'
+    if (!privacy) next.privacy = 'Consenso obbligatorio'
     setErrors(next)
     return Object.keys(next).length === 0
   }
@@ -110,6 +112,7 @@ export default function App() {
       cognome: form.cognome.trim(),
       email: form.email.trim(),
       telefono: form.telefono.trim() || '—',
+      privacy: 'Accettata',
     })
     setSubmitting(false)
     setStage('details')
@@ -228,6 +231,41 @@ export default function App() {
                 onChange={(e) => updateField('telefono', e.target.value)}
               />
             </div>
+
+            <div className={`privacy${errors.privacy ? ' has-error' : ''}`}>
+              <input
+                id="privacy"
+                name="privacy"
+                type="checkbox"
+                checked={privacy}
+                onChange={(e) => {
+                  setPrivacy(e.target.checked)
+                  if (errors.privacy) {
+                    setErrors((prev) => {
+                      const next = { ...prev }
+                      delete next.privacy
+                      return next
+                    })
+                  }
+                }}
+              />
+              <label htmlFor="privacy" className="privacy-label">
+                Dichiaro di aver letto l&apos;
+                <a
+                  href="https://www.gioielleriarabino.com/informativa-privacy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  informativa privacy
+                </a>{' '}
+                e acconsento al trattamento dei dati personali forniti in
+                questa registrazione esclusivamente per la gestione
+                dell&apos;invito e dell&apos;evento Chanel × Rabino 1895.*
+              </label>
+            </div>
+            {errors.privacy && (
+              <span className="field-error">{errors.privacy}</span>
+            )}
 
             <button type="submit" className="btn-primary" disabled={submitting}>
               {submitting ? 'Invio…' : 'ACCEDI AI DETTAGLI'}
@@ -354,14 +392,16 @@ export default function App() {
               )}
             </div>
 
-            <a
-              className="discover-link"
-              href="https://www.gioielleriarabino.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              SCOPRI RABINO 1895 →
-            </a>
+            <div className="discover-wrap">
+              <a
+                className="discover-link"
+                href="https://www.gioielleriarabino.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SCOPRI RABINO 1895 →
+              </a>
+            </div>
 
             <footer className="footer">
               <img
