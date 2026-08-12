@@ -51,7 +51,7 @@ function buildIcs() {
     'DTSTAMP:20260918T180000Z',
     'DTSTART:20260918T180000Z',
     'DTEND:20260918T190000Z',
-    'SUMMARY:Elefantino × Chanel — Rabino 1895',
+    'SUMMARY:Rabino Chanel — Rabino 1895',
     `DESCRIPTION:${description}`,
     'LOCATION:Rooftop\\, Hotel Superga / Cuneo',
     'END:VEVENT',
@@ -62,7 +62,7 @@ function buildIcs() {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
-  a.download = 'elefantino-chanel-rabino.ics'
+  a.download = 'rabino-chanel.ics'
   document.body.appendChild(a)
   a.click()
   document.body.removeChild(a)
@@ -142,12 +142,12 @@ export default function App() {
           <p className="teaser-brand">GIOIELLERIA RABINO 1895</p>
 
           <div className="teaser-center">
-            <h1 className="teaser-chanel">CHANEL</h1>
-            <img
-              className="teaser-icon"
-              src={asset('assets/elefantino.svg')}
-              alt="Elefantino Chanel"
-            />
+            <h1 className="teaser-lockup">
+              <span className="teaser-lockup-rabino">RABINO</span>
+              <span className="teaser-lockup-sep">×</span>
+              <span className="teaser-lockup-chanel">CHANEL</span>
+            </h1>
+            <p className="teaser-partnership">Storica partnership</p>
             <p className="teaser-date">18 SETTEMBRE</p>
             <p className="teaser-city">CUNEO</p>
           </div>
@@ -290,7 +290,7 @@ export default function App() {
           <div className="details-body">
             <p className="eyebrow">L&apos;EVENTO</p>
             <h2 className="title-serif" style={{ fontStyle: 'normal' }}>
-              Elefantino × Chanel
+              Rabino Chanel
             </h2>
 
             <div className="details-list">
